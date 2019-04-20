@@ -8,7 +8,7 @@ var config = {};
  */
 config.development = {
   API: {
-    URL: 'http://localhost:3000',
+    URL: 'https://localhost:3000',
     SET: '/report/set',
     GET: '/report/get'
   }
@@ -19,7 +19,7 @@ config.development = {
  */
 config.production = {
   API: {
-    URL: 'http://localhost:3000',
+    URL: 'https://localhost:3000',
     SET: '/report/set',
     GET: '/report/get'
   }

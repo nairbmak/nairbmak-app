@@ -64,7 +64,7 @@ class View extends Component {
     if (!this.state || !this.state.data) return null;
 
     return (
-      <div>
+      <div className="animated slideInLeft">
         <div className="row">
           <h1 className="col-12">I. THÔNG TIN VỀ PHẢN ỨNG CÓ HẠI (ADR)</h1>
         </div>
@@ -111,7 +111,7 @@ class View extends Component {
                     <input type="text" placeholder="Report ID" onChange={this.onChange} value={this.state.hash} />
                   </div>
                   <div className="col-3">
-                    <button className="my-btn primary no-margin" onClick={this.find}>Find</button>
+                    <button className="my-btn primary m-0" onClick={this.find}>Find</button>
                   </div>
                 </div>
                 {this.error()}

@@ -38,7 +38,7 @@ class ScoreAction extends Component {
 
   render() {
     return (
-      <div className="row">
+      <div className="row animated slideInLeft">
         <div className="col-6">
           <div className="box">
             <div className="row">
@@ -48,10 +48,10 @@ class ScoreAction extends Component {
             </div>
             <div className="row">
               <div className="col-6">
-                <button className="my-btn secondary no-margin" onClick={() => { this._scoreReport(this.props.hash) }}>OK</button>
+                <button className="my-btn secondary m-0" onClick={() => { this._scoreReport(this.props.hash) }}>OK</button>
               </div>
               <div className="col-6">
-                <button className="my-btn cancel no-margin" onClick={() => { this.returnData(null, null) }}>Cancel</button>
+                <button className="my-btn cancel m-0" onClick={() => { this.returnData(null, null) }}>Cancel</button>
               </div>
             </div>
           </div>

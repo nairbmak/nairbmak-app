@@ -5,7 +5,7 @@ import Util from 'helpers/util.lib';
 import { closeReport } from 'modules/database.reducer';
 
 import ScoreAction from './score.action';
-import SupportAction from './support.action';
+import DonateAction from './donate.action';
 
 
 class Action extends Component {
@@ -20,7 +20,7 @@ class Action extends Component {
 
     this.message = this.message.bind(this);
     this.openScore = this.openScore.bind(this);
-    this.openSupport = this.openSupport.bind(this);
+    this.openDonate = this.openDonate.bind(this);
     this.done = this.done.bind(this);
     this._closeReport = this._closeReport.bind(this);
   }
@@ -46,9 +46,9 @@ class Action extends Component {
     });
   }
 
-  openSupport() {
+  openDonate() {
     this.setState({ visible: null }, () => {
-      this.setState({ visible: 'support' });
+      this.setState({ visible: 'donate' });
     });
   }
 
@@ -96,13 +96,13 @@ class Action extends Component {
               </div>
               <div className="row">
                 <div className="col-4">
-                  <button className="my-btn secondary no-margin" onClick={this.openSupport}>Support</button>
+                  <button className="my-btn secondary m-0" onClick={this.openDonate}>Donate</button>
                 </div>
                 <div className="col-4">
-                  <button className="my-btn primary no-margin" onClick={this.openScore}>Score</button>
+                  <button className="my-btn primary m-0" onClick={this.openScore}>Score</button>
                 </div>
                 <div className="col-4">
-                  <button className="my-btn primary no-margin" onClick={() => { this._closeReport(hash) }}>Close</button>
+                  <button className="my-btn primary m-0" onClick={() => { this._closeReport(hash) }}>Close</button>
                 </div>
               </div>
 
@@ -112,7 +112,7 @@ class Action extends Component {
         </div>}
 
         {this.state.visible === "score" ? <ScoreAction hash={Util.decodeIPFSHash(hash)} done={this.done} /> : null}
-        {this.state.visible === "support" ? <SupportAction hash={Util.decodeIPFSHash(hash)} done={this.done} /> : null}
+        {this.state.visible === "donate" ? <DonateAction hash={Util.decodeIPFSHash(hash)} done={this.done} /> : null}
       </div>
     );
   }

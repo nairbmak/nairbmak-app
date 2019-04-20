@@ -127,16 +127,16 @@ class Explorer extends Component {
             <div className="box">
               <div className="row">
                 <div className="col-3">
-                  <button className="my-btn secondary no-margin" onClick={this._getExplorer}>Tải dữ liệu</button>
+                  <button className="my-btn secondary m-0" onClick={this._getExplorer}>Reload</button>
                 </div>
                 <div className="col-4">
-                  <button className="my-btn primary no-margin" onClick={this.previous}>Previous</button>
+                  <button className="my-btn primary m-0" onClick={this.previous}>Previous</button>
                 </div>
                 <div className="col-1">
                   <p className="text-center">Page: {this.state.page + 1}</p>
                 </div>
                 <div className="col-4">
-                  <button className="my-btn primary no-margin" onClick={this.next}>Next</button>
+                  <button className="my-btn primary m-0" onClick={this.next}>Next</button>
                 </div>
               </div>
             </div>

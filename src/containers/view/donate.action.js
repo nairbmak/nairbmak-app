@@ -6,7 +6,7 @@ import { getReport } from 'modules/database.reducer';
 import { transferWORK } from 'modules/work.reducer';
 
 
-class SupportAction extends Component {
+class DonateAction extends Component {
   constructor() {
     super();
 
@@ -47,20 +47,20 @@ class SupportAction extends Component {
     if (!hash) return null;
 
     return (
-      <div className="row">
+      <div className="row animated slideInLeft">
         <div className="col-6" key={0}>
           <div className="box">
             <div className="row">
               <div className="col">
-                <p className="lengthy">Support the report {this.props.hash} </p>
+                <p className="lengthy">Donate the report {this.props.hash} </p>
               </div>
             </div>
             <div className="row">
               <div className="col-6">
-                <button className="my-btn secondary no-margin" onClick={this._supportReport}>OK</button>
+                <button className="my-btn secondary m-0" onClick={this._supportReport}>OK</button>
               </div>
               <div className="col-6">
-                <button className="my-btn cancel no-margin" onClick={() => { this.returnData(null, null) }}>Cancel</button>
+                <button className="my-btn cancel m-0" onClick={() => { this.returnData(null, null) }}>Cancel</button>
               </div>
             </div>
           </div>
@@ -91,4 +91,4 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SupportAction);
+)(DonateAction);

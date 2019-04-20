@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Table from '../core/table';
 
-const NAME = 'ThongTinVeThuocNghiNgoGayADR';
-const NAME_ONE = 'ThuocNghiNgoGayPhanUng';
-const NAME_TWO = 'CacThuocDongThoi';
+const NAME = 'DetailsOfDrugsSuspectedToHaveCausedTheADR';
+const NAME_ONE = 'SuspectedDrugs';
+const NAME_TWO = 'OtherDrugs';
 
 
 class ComponentTwo extends Component {
@@ -16,19 +16,19 @@ class ComponentTwo extends Component {
       <div className="row">
         <Table
           viewOnly={true}
-          title={<p>9. Thuốc nghi ngờ gây phản ứng</p>}
+          title={<p>9. Suspected drugs</p>}
           size='12'
-          headers={['Thuốc nghi ngờ', 'Dạng bào chế', 'Hàm lượng', 'Liều dùng', 'Đường dùng', 'Ngày bắt đầu', 'Ngày kết thúc', 'Lý do dùng thuốc']}
-          keys={['ThuocNghiNgo', 'DangBaoChe', 'HamLuongThuoc', 'LieuDungMotLan', 'DuongDung', 'NgayBatDau', 'NgayKetThuc', 'LyDoDungThuoc']}
+          headers={['Trade name', 'Pharmaceutical form', 'Content', 'Dose (for one time)', 'Route', 'Date started', 'Date stopped', 'Reason for use']}
+          keys={['TradeName', 'PharmaceuticalForm', 'Content', 'Dose', 'Route', 'DateStarted', 'DateStopped', 'ReasonForUse']}
           data={dataOne}
         />
 
         <Table
           viewOnly={true}
-          title={<p>10. Các thuốc dùng đồng thời (Ngoại trừ các thuốc dùng điều trị/ khắc phục hậu quả của ADR)</p>}
+          title={<p>10. Other drugs (Including complementary medicines, consumed at the same time and/or 3 months before)</p>}
           size='12'
-          headers={['Thuốc dùng đồng thời', 'Dạng bào chế', 'Hàm lượng', 'Liều dùng', 'Đường dùng', 'Ngày bắt đầu', 'Ngày kết thúc', 'Lý do dùng thuốc']}
-          keys={['ThuocDungDongThoi', 'DangBaoChe', 'HamLuongThuoc', 'LieuDungMotLan', 'DuongDung', 'NgayBatDau', 'NgayKetThuc', 'LyDoDungThuoc']}
+          headers={['Trade name', 'Pharmaceutical form', 'Content', 'Dose (for one time)', 'Route', 'Date started', 'Date stopped', 'Reason for use']}
+          keys={['TradeName', 'PharmaceuticalForm', 'Content', 'Dose', 'Route', 'DateStarted', 'DateStopped', 'ReasonForUse']}
           data={dataTwo}
         />
       </div>

@@ -91,7 +91,7 @@ class Action extends Component {
             <div className="box">
               <div className="row">
                 <div className="col">
-                  <p className="lengthy">ADR/ADE {Util.decodeIPFSHash(hash)}</p>
+                  <p className="lengthy">The report {Util.decodeIPFSHash(hash)}</p>
                 </div>
               </div>
               <div className="row">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BoxText from '../core/boxText';
 
-const NAME = 'ThongTinVeNguoiDonViDanhGia';
+const NAME = 'ParticularsOfReviewers';
 
 
 class ComponentFive extends Component {
@@ -12,8 +12,8 @@ class ComponentFive extends Component {
       <div className="row">
         <BoxText
           viewOnly={true}
-          title={<p>Danh sách chuyên gia đánh giá:</p>}
-          name="DanhSachChuyenGiaDanhGia"
+          title={<p>List of reviewer addresses:</p>}
+          name="ListOfReviewerAddresses"
           hint="0xa, 0xb, ..."
           onChange={this.onChange}
           data={data}

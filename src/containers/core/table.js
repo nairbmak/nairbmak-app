@@ -18,7 +18,7 @@ class Table extends Component {
       re.push(<th key={i}>{data[i]}</th>);
     }
     if (!this.props.viewOnly) {
-      re.push(<th key={i}>Xoá</th>);
+      re.push(<th key={i}>Remove</th>);
     }
     return (<tr>{re}</tr>)
   }

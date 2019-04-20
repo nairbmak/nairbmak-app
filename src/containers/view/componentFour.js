@@ -13,8 +13,8 @@ class ComponentFour extends Component {
       <div className="row">
         <BoxText
           viewOnly={true}
-          title={<p>Họ và Tên:</p>}
-          name="HoVaTen"
+          title={<p>Fullname</p>}
+          name="Fullname"
           hint="Hint"
           data={data}
           size="4"
@@ -29,49 +29,49 @@ class ComponentFour extends Component {
         />
         <BoxText
           viewOnly={true}
-          title={<p>Điện thoại:</p>}
-          name="DienThoai"
+          title={<p>Phone number</p>}
+          name="PhoneNumber"
           hint="Hint"
           data={data}
           size="4"
         />
         <CheckboxText
           viewOnly={true}
-          title={<p>Nghề nghiệp:</p>}
-          name="NgheNghiep"
-          options={['Bác sĩ', 'Nha sĩ', 'Dược sĩ', 'Công ty Dược phẩm', 'Y tá', 'Diều dưỡng', 'Nữ hộ sinh']}
-          more='Khác'
+          title={<p>Profession</p>}
+          name="Profession"
+          options={['Doctor', 'Dentist', 'Pharmacist', 'Pharmacy Company', 'Nurse', 'Nursing', 'Midwife']}
+          more='Other'
           data={data}
           size="7"
         />
         <CheckboxText
           viewOnly={true}
-          title={<p>Dạng báo cáo:</p>}
-          name="DangBaoCao"
-          options={['Báo cáo lần đầu', 'Báo cáo bổ sung']}
+          title={<p>Kind of report</p>}
+          name="KindOfReport"
+          options={['New report', 'Supplementary report']}
           data={data}
           size="5"
         />
         <BoxText
           viewOnly={true}
-          title={<p>Ngày báo cáo:</p>}
-          name="NgayBaoCao"
+          title={<p>Date reported</p>}
+          name="DateReported"
           hint="Hint"
           data={data}
           size="4"
         />
         <BoxText
           viewOnly={true}
-          title={<p>Tên đơn vị báo cáo:</p>}
-          name="TenDonViBaoCao"
+          title={<p>Name of department</p>}
+          name="NameOfDepartment"
           hint="Hint"
           data={data}
           size="4"
         />
         <BoxText
           viewOnly={true}
-          title={<p>Địa chỉ đơn vị báo cáo:</p>}
-          name="DiaChiDonViBaoCao"
+          title={<p>Address of department</p>}
+          name="AddressOfDepartment"
           hint="Hint"
           data={data}
           size="4"

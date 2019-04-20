@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CheckboxText from '../core/checkboxText';
 import BoxText from '../core/boxText';
 
-const NAME = 'ThongTinVeNguoiDonViGuiBaoCao';
+const NAME = 'ParticularsOfReporter';
 
 
 class ComponentFour extends Component {
@@ -11,14 +11,14 @@ class ComponentFour extends Component {
 
     this.state = {
       data: {
-        HoVaTen: null,
+        Fullname: null,
         Email: null,
-        DienThoai: null,
-        NgheNghiep: null,
-        DangBaoCao: null,
-        NgayBaoCao: null,
-        TenDonViBaoCao: null,
-        DiaChiDonViBaoCao: null,
+        PhoneNumber: null,
+        Profession: null,
+        KindOfReport: null,
+        DateReported: null,
+        NameOfDepartment: null,
+        AddressOfDepartment: null,
       }
     }
 
@@ -44,58 +44,58 @@ class ComponentFour extends Component {
     return (
       <div className="row">
         <BoxText
-          title={<p>Họ và Tên:</p>}
-          name="HoVaTen"
+          title={<p>Fullname</p>}
+          name="Fullname"
           hint="Hint"
           onChange={this.onChange}
           size="4"
         />
         <BoxText
-          title={<p>Email:</p>}
+          title={<p>Email</p>}
           name="Email"
           hint="Hint"
           onChange={this.onChange}
           size="4"
         />
         <BoxText
-          title={<p>Điện thoại:</p>}
-          name="DienThoai"
+          title={<p>Phone number</p>}
+          name="PhoneNumber"
           hint="Hint"
           onChange={this.onChange}
           size="4"
         />
         <CheckboxText
-          title={<p>Nghề nghiệp:</p>}
-          name="NgheNghiep"
-          options={['Bác sĩ', 'Nha sĩ', 'Dược sĩ', 'Công ty Dược phẩm', 'Y tá', 'Diều dưỡng', 'Nữ hộ sinh']}
-          more='Khác'
+          title={<p>Profession</p>}
+          name="Profession"
+          options={['Doctor', 'Dentist', 'Pharmacist', 'Pharmacy Company', 'Nurse', 'Nursing', 'Midwife']}
+          more='Other'
           onChange={this.onChange}
           size="7"
         />
         <CheckboxText
-          title={<p>Dạng báo cáo:</p>}
-          name="DangBaoCao"
-          options={['Báo cáo lần đầu', 'Báo cáo bổ sung']}
+          title={<p>Kind of report</p>}
+          name="KindOfReport"
+          options={['New report', 'Supplementary report']}
           onChange={this.onChange}
           size="5"
         />
         <BoxText
-          title={<p>Ngày báo cáo:</p>}
-          name="NgayBaoCao"
+          title={<p>Date reported</p>}
+          name="DateReported"
           hint="Hint"
           onChange={this.onChange}
           size="4"
         />
         <BoxText
-          title={<p>Tên đơn vị báo cáo:</p>}
-          name="TenDonViBaoCao"
+          title={<p>Name of department</p>}
+          name="NameOfDepartment"
           hint="Hint"
           onChange={this.onChange}
           size="4"
         />
         <BoxText
-          title={<p>Địa chỉ đơn vị báo cáo:</p>}
-          name="DiaChiDonViBaoCao"
+          title={<p>Address of department</p>}
+          name="AddressOfDepartment"
           hint="Hint"
           onChange={this.onChange}
           size="4"

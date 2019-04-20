@@ -4,9 +4,9 @@ import Table from '../core/table';
 import InputOne from './componentTwo.inputOne';
 import InputTwo from './componentTwo.inputTwo';
 
-const NAME = 'ThongTinVeThuocNghiNgoGayADR';
-const NAME_ONE = 'ThuocNghiNgoGayPhanUng';
-const NAME_TWO = 'CacThuocDongThoi';
+const NAME = 'DetailsOfDrugsSuspectedToHaveCausedTheADR';
+const NAME_ONE = 'SuspectedDrugs';
+const NAME_TWO = 'OtherDrugs';
 
 
 class ComponentTwo extends Component {
@@ -22,17 +22,17 @@ class ComponentTwo extends Component {
       deactive: (
         <div className="row justify-content-end">
           <div className="col-2">
-            <button className="my-btn primary" onClick={this.openInputOne}>Thêm mới</button>
+            <button className="my-btn primary" onClick={this.openInputOne}>Add</button>
           </div>
         </div>
       ),
       active: (
         <div className="row justify-content-end">
           <div className="col-2">
-            <button className="my-btn cancel" onClick={this.closeInputOne}>Huỷ</button>
+            <button className="my-btn cancel" onClick={this.closeInputOne}>Cancel</button>
           </div>
           <div className="col-2">
-            <button className="my-btn secondary" onClick={this.saveInputOne}>Lưu</button>
+            <button className="my-btn secondary" onClick={this.saveInputOne}>Save</button>
           </div>
         </div>
       )
@@ -47,17 +47,17 @@ class ComponentTwo extends Component {
       deactive: (
         <div className="row justify-content-end">
           <div className="col-2">
-            <button className="my-btn primary" onClick={this.openInputTwo}>Thêm mới</button>
+            <button className="my-btn primary" onClick={this.openInputTwo}>Add</button>
           </div>
         </div>
       ),
       active: (
         <div className="row justify-content-end">
           <div className="col-2">
-            <button className="my-btn cancel" onClick={this.closeInputTwo}>Huỷ</button>
+            <button className="my-btn cancel" onClick={this.closeInputTwo}>Cancel</button>
           </div>
           <div className="col-2">
-            <button className="my-btn secondary" onClick={this.saveInputTwo}>Lưu</button>
+            <button className="my-btn secondary" onClick={this.saveInputTwo}>Save</button>
           </div>
         </div>
       )
@@ -132,10 +132,10 @@ class ComponentTwo extends Component {
       <div className="row">
         <Table
           viewOnly={false}
-          title={<p>9. Thuốc nghi ngờ gây phản ứng</p>}
+          title={<p>9. Suspected drugs</p>}
           size='12'
-          headers={['Thuốc nghi ngờ', 'Dạng bào chế', 'Hàm lượng', 'Liều dùng', 'Đường dùng', 'Ngày bắt đầu', 'Ngày kết thúc', 'Lý do dùng thuốc']}
-          keys={['ThuocNghiNgo', 'DangBaoChe', 'HamLuongThuoc', 'LieuDungMotLan', 'DuongDung', 'NgayBatDau', 'NgayKetThuc', 'LyDoDungThuoc']}
+          headers={['Trade name', 'Pharmaceutical form', 'Content', 'Dose (for one time)', 'Route', 'Date started', 'Date stopped', 'Reason for use']}
+          keys={['TradeName', 'PharmaceuticalForm', 'Content', 'Dose', 'Route', 'DateStarted', 'DateStopped', 'ReasonForUse']}
           btn={this.state.btnOne}
           remove={this.removeInputOne}
           data={this.state.dataOne}
@@ -144,10 +144,10 @@ class ComponentTwo extends Component {
 
         <Table
           viewOnly={false}
-          title={<p>10. Các thuốc dùng đồng thời (Ngoại trừ các thuốc dùng điều trị/ khắc phục hậu quả của ADR)</p>}
+          title={<p>10. Other drugs (Including complementary medicines, consumed at the same time and/or 3 months before)</p>}
           size='12'
-          headers={['Thuốc dùng đồng thời', 'Dạng bào chế', 'Hàm lượng', 'Liều dùng', 'Đường dùng', 'Ngày bắt đầu', 'Ngày kết thúc', 'Lý do dùng thuốc']}
-          keys={['ThuocDungDongThoi', 'DangBaoChe', 'HamLuongThuoc', 'LieuDungMotLan', 'DuongDung', 'NgayBatDau', 'NgayKetThuc', 'LyDoDungThuoc']}
+          headers={['Trade name', 'Pharmaceutical form', 'Content', 'Dose (for one time)', 'Route', 'Date started', 'Date stopped', 'Reason for use']}
+          keys={['TradeName', 'PharmaceuticalForm', 'Content', 'Dose', 'Route', 'DateStarted', 'DateStopped', 'ReasonForUse']}
           btn={this.state.btnTwo}
           remove={this.removeInputTwo}
           data={this.state.dataTwo}

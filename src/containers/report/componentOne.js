@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import BoxText from '../core/boxText';
 import CheckboxText from '../core/checkboxText';
 
-const NAME = 'ThongTinVePhanUngCoHai';
+const NAME = 'DetailsOfAdverseDrugReaction';
 
 class ComponentOne extends Component {
 
@@ -12,14 +12,14 @@ class ComponentOne extends Component {
 
     this.state = {
       data: {
-        NgayXuatHienPhanUng: null,
-        NgayXuatHienSauBaoLau: null,
-        MoTaBieuHienADR: null,
-        CacXetNghiemLienQuanDenPhanUng: null,
-        TienSu: null,
-        CachXuTriPhanUng: null,
-        MucDoNghiemTrongCuPhanUng: null,
-        KetQuaSauKhiXuTriPhanUng: null,
+        DateOfOnset: null,
+        Duration: null,
+        DescriptionOfADR: null,
+        RelevantADRTest: null,
+        RelevantMedicalHistory: null,
+        Intervention: null,
+        SeriousnessOfADR: null,
+        PatientOutcomes: null,
       }
     }
 
@@ -45,52 +45,52 @@ class ComponentOne extends Component {
     return (
       <div className="row">
         <BoxText
-          title={<p>1. Ngày xuất hiện phản ứng:</p>}
-          name="NgayXuatHienPhanUng"
+          title={<p>1. Date of onset</p>}
+          name="DateOfOnset"
           hint="Hint"
           onChange={this.onChange}
           size="6" />
         <BoxText
-          title={<p>2. Phản ứng xuất hiện sau bao lâu: <span className="italic">(Tính từ lần dùng cuối cùng của thuốc nghi ngờ)</span></p>}
-          name="NgayXuatHienSauBaoLau"
+          title={<p>2. Duration <span className="italic">(At the last time using suspected drugs)</span></p>}
+          name="Duration"
           hint="Hint"
-          options={['giờ', 'phút', 'giây']}
+          options={['hour', 'minute', 'second']}
           onChange={this.onChange}
           size="6" />
         <BoxText
-          title={<p>3. Mô tả biểu hiện ADR</p>}
-          name="MoTaBieuHienADR"
-          hint="Hint"
-          onChange={this.onChange}
-          size="6" />
-        <BoxText
-          title={<p>4. Các xét nghiệm liên quan đến phản ứng</p>}
-          name="CacXetNghiemLienQuanDenPhanUng"
+          title={<p>3. Description of ADR(s)</p>}
+          name="DescriptionOfADR"
           hint="Hint"
           onChange={this.onChange}
           size="6" />
         <BoxText
-          title={<p>5. Tiền sử:</p>}
-          name="TienSu"
+          title={<p>4. Relevant ADR test(s)</p>}
+          name="RelevantADRTest"
           hint="Hint"
           onChange={this.onChange}
           size="6" />
         <BoxText
-          title={<p>6. Cách xử trí phản ứng</p>}
-          name="CachXuTriPhanUng"
+          title={<p>5. Relevant medical history:</p>}
+          name="RelevantMedicalHistory"
+          hint="Hint"
+          onChange={this.onChange}
+          size="6" />
+        <BoxText
+          title={<p>6. Intervention</p>}
+          name="Intervention"
           hint="Hint"
           onChange={this.onChange}
           size="6" />
         <CheckboxText
-          title={<p>7. Mức độ nghiêm trọng của phản ứng:</p>}
-          name="MucDoNghiemTrongCuPhanUng"
-          options={['Tử vong', 'Nhập viện/Kéo dài thời gian nằm viện', 'Dị tật thai nhi', 'Đe dọa tính mạng', 'Tàn tật vĩnh viễn/nặng nề', 'Không nghiêm trọng', 'Không rõ']}
+          title={<p>7. Seriousness Of ADR(s):</p>}
+          name="SeriousnessOfADR"
+          options={['Patient died', 'Hospitalisation prolonged', 'Congenital Anomaly', 'Life threatening', 'Impairment/Disability', 'Non-serious', 'Unknown']}
           onChange={this.onChange}
           size="12" />
         <CheckboxText
-          title={<p>8. Kết quả sau khi xử trí phản ứng:</p>}
-          name="KetQuaSauKhiXuTriPhanUng"
-          options={['Tử vong do ADR', 'Chưa hồi phục', 'Hồi phục có di chứng', 'Tử vong không liên quan đến thuốc', 'Đang hồi phục', 'Hồi phục không có di chứng', 'Không rõ']}
+          title={<p>8. Patient outcomes:</p>}
+          name="PatientOutcomes"
+          options={['Patient died due to ADR', 'Not recovered', 'Impairment/Disability', 'Patient died due to other reasons', 'Recovering', 'Recovered without impairment/disability', 'Unknown']}
           onChange={this.onChange}
           size="12" />
       </div>

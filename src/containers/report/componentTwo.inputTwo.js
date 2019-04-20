@@ -8,17 +8,17 @@ class InputTwo extends Component {
 
     this.state = {
       data: {
-        ThuocDungDongThoi: null,
-        DangBaoChe: null,
-        NhaSanXuatThuoc: null,
-        LieuDungMotLan: null,
-        DuongDung: null,
-        NgayBatDau: null,
-        NgayKetThuc: null,
-        HamLuongThuoc: null,
-        SoLo: null,
-        SoLanSuDung: null,
-        LyDoDungThuoc: null,
+        TradeName: null,
+        PharmaceuticalForm: null,
+        BranchName: null,
+        Dose: null,
+        Route: null,
+        DateStarted: null,
+        DateStopped: null,
+        Content: null,
+        BatchNumber: null,
+        Interval: null,
+        ReasonForUse: null,
       }
     }
 
@@ -42,32 +42,32 @@ class InputTwo extends Component {
         <div className="row">
           <BoxText
             pop="box secondary"
-            title={<p>Thuốc dùng đông thời</p>}
-            name="ThuocDungDongThoi"
+            title={<p>Trade name</p>}
+            name="TradeName"
             hint="Hint"
             onChange={this.onChange}
             size='3'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Dạng bào chế</p>}
-            name="DangBaoChe"
+            title={<p>Pharmaceutical form</p>}
+            name="PharmaceuticalForm"
             hint="Hint"
             onChange={this.onChange}
             size='3'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Nhà sản xuất thuốc</p>}
-            name="NhaSanXuatThuoc"
+            title={<p>Branch name</p>}
+            name="BranchName"
             hint="Hint"
             onChange={this.onChange}
             size='3'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Liều dùng một lần</p>}
-            name="LieuDungMotLan"
+            title={<p>Dose (For one time)</p>}
+            name="Dose"
             hint="Hint"
             options={['G', 'mg', 'mcg', 'ng', 'UI', 'g/l', 'mg/ml', 'mcg/ml', 'UI/ml']}
             onChange={this.onChange}
@@ -75,32 +75,32 @@ class InputTwo extends Component {
           />
           <BoxText
             pop="box secondary"
-            title={<p>Đường dùng</p>}
-            name="DuongDung"
+            title={<p>Route</p>}
+            name="Route"
             hint="Hint"
             onChange={this.onChange}
             size='4'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Ngày bắt đầu</p>}
-            name="NgayBatDau"
+            title={<p>Date started</p>}
+            name="DateStarted"
             hint="Hint"
             onChange={this.onChange}
             size='4'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Ngày kết thúc</p>}
-            name="NgayKetThuc"
+            title={<p>Date stopped</p>}
+            name="DateStopped"
             hint="Hint"
             onChange={this.onChange}
             size='4'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Hàm lượng thuốc</p>}
-            name="HamLuongThuoc"
+            title={<p>Content</p>}
+            name="Content"
             hint="Hint"
             options={['G', 'mg', 'mcg', 'ng', 'UI', 'g/l', 'mg/ml', 'mcg/ml', 'UI/ml']}
             onChange={this.onChange}
@@ -108,25 +108,25 @@ class InputTwo extends Component {
           />
           <BoxText
             pop="box secondary"
-            title={<p>Số lô</p>}
-            name="SoLo"
+            title={<p>Batch number</p>}
+            name="BatchNumber"
             hint="Hint"
             onChange={this.onChange}
             size='6'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Số lần sử dụng</p>}
-            name="SoLanSuDung"
+            title={<p>Interval</p>}
+            name="Interval"
             hint="Hint"
-            options={['lần/ngày', 'lần/tuẩn', 'lần/tháng']}
+            options={['per day', 'per week', 'per month']}
             onChange={this.onChange}
             size='6'
           />
           <BoxText
             pop="box secondary"
-            title={<p>Lý do dùng thuốc</p>}
-            name="LyDoDungThuoc"
+            title={<p>Reason for use</p>}
+            name="ReasonForUse"
             hint="Hint"
             onChange={this.onChange}
             size='6'

@@ -93,27 +93,27 @@ class Report extends Component {
           <div className="container">
 
             <div className="row">
-              <h1 className="col-12">I. THÔNG TIN VỀ PHẢN ỨNG CÓ HẠI (ADR)</h1>
+              <h1 className="col-12">I. DETAILS OF ADVERSE DRUG REACTION (ADR)</h1>
             </div>
             <ComponentOne onData={this.onData} />
 
             <div className="row">
-              <h1 className="col-12">II. THÔNG TIN VỀ THUỐC NGHI NGỜ GÂY ADR</h1>
+              <h1 className="col-12">II. DETAILS OF DRUGS SUSPECTED TO HAVE CAUSED THE ADR</h1>
             </div>
             <ComponentTwo onData={this.onData} />
 
             <div className="row">
-              <h1 className="col-12">III. PHẦN THẨM ĐỊNH ADR CỦA ĐƠN VỊ</h1>
+              <h1 className="col-12">III. THE ADR ASSESSMENT</h1>
             </div>
             <ComponentThree onData={this.onData} />
 
             <div className="row">
-              <h1 className="col-12">IV. THÔNG TIN VỀ NGƯỜI / ĐƠN VỊ GỬI BÁO CÁO</h1>
+              <h1 className="col-12">IV. PARTICULARS OF REPORTER</h1>
             </div>
             <ComponentFour onData={this.onData} />
 
             <div className="row">
-              <h1 className="col-12">V. THÔNG TIN VỀ NGƯỜI / ĐƠN VỊ ĐÁNH GIÁ</h1>
+              <h1 className="col-12">V. PARTICULARS OF REVIWER</h1>
             </div>
             <ComponentFive onData={this.onReviewers} />
 
@@ -122,10 +122,10 @@ class Report extends Component {
                 {this.message()}
               </div>
               <div className="col-2">
-                <button className="my-btn cancel large" onClick={this.reset}>Huỷ bỏ</button>
+                <button className="my-btn cancel large" onClick={this.reset}>Cancel</button>
               </div>
               <div className="col-2">
-                <button className="my-btn primary large" onClick={this.submit}>Báo cáo</button>
+                <button className="my-btn primary large" onClick={this.submit}>Submit</button>
               </div>
             </div>
           </div>

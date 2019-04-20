@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BoxText from '../core/boxText';
 import Util from 'helpers/util.lib';
 
-const NAME = 'ThongTinVeNguoiDonViDanhGia';
+const NAME = 'ParticularsOfReviewers';
 
 
 class ComponentFive extends Component {
@@ -11,7 +11,7 @@ class ComponentFive extends Component {
 
     this.state = {
       data: {
-        DanhSachChuyenGiaDanhGia: null
+        ListOfReviewerAddresses: null
       }
     }
 
@@ -25,11 +25,11 @@ class ComponentFive extends Component {
   }
 
   onChange(value) {
-    let re = Util.string2Array(value.DanhSachChuyenGiaDanhGia);
+    let re = Util.string2Array(value.ListOfReviewerAddresses);
     this.setState({
       data: {
         ...this.state.data,
-        DanhSachChuyenGiaDanhGia: re
+        ListOfReviewerAddresses: re
       }
     });
   }
@@ -38,8 +38,8 @@ class ComponentFive extends Component {
     return (
       <div className="row">
         <BoxText
-          title={<p>Danh sách chuyên gia đánh giá:</p>}
-          name="DanhSachChuyenGiaDanhGia"
+          title={<p>List of reviewer addresses:</p>}
+          name="ListOfReviewerAddresses"
           hint="0xa, 0xb, ..."
           onChange={this.onChange}
           size="12"

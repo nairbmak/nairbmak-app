@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import CheckboxText from '../core/checkboxText';
 import BoxText from '../core/boxText';
 
-const NAME = 'PhanThamDinhADRCuaDonVi';
+const NAME = 'TheADRAssessment';
 
 
 class ComponentThree extends Component {
@@ -12,9 +12,9 @@ class ComponentThree extends Component {
 
     this.state = {
       data: {
-        DanhGiaMoiLienQuanGiuaThuocVaADR: null,
-        DonViThamDinhADRTheoThangNao: null,
-        PhanBinhLuanCuaCanBoYTe: null,
+        AssessmentOfCausality: null,
+        ProbabilityScale: null,
+        Comments: null,
       }
     }
 
@@ -40,24 +40,24 @@ class ComponentThree extends Component {
     return (
       <div className="row">
         <CheckboxText
-          title={<p>11. Đánh giá mối liên quan giữa thuốc và ADR</p>}
-          name="DanhGiaMoiLienQuanGiuaThuocVaADR"
-          options={['Chắc chắn', 'Không chắc chắn', 'Có khả năng', 'Chưa phân loại', 'Có thể', 'Không thể phân loại', 'Chưa đánh giá']}
-          more="Khác"
+          title={<p>11. Assessment of causality</p>}
+          name="AssessmentOfCausality"
+          options={['Certain', 'Uncertain', 'Probable/likely', 'Conditional/unclassified', 'Possible', 'Unassessable/unclassifiable', 'Not assess']}
+          more="Other"
           onChange={this.onChange}
           size="6" />
 
         <CheckboxText
-          title={<p>12. Đơn vị thẩm định ADR theo thang nào?</p>}
-          name="DonViThamDinhADRTheoThangNao"
-          options={['Thang WHO', 'Thang Naranjo', 'Chưa thẩm định']}
-          more="Thang khác"
+          title={<p>12. Probability scale</p>}
+          name="ProbabilityScale"
+          options={['WHO', 'Naranjo', 'Not assess']}
+          more="Other"
           onChange={this.onChange}
           size="6" />
 
         <BoxText
-          title={<p>13. Phần bình luận của cán bộ y tế: <span className="italic">(Nếu có)</span></p>}
-          name="PhanBinhLuanCuaCanBoYTe"
+          title={<p>13. Comments <span className="italic">(Optional)</span></p>}
+          name="Comments"
           hint="Hint"
           onChange={this.onChange}
           size="12"

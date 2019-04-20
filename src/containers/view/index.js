@@ -66,27 +66,27 @@ class View extends Component {
     return (
       <div className="animated slideInLeft">
         <div className="row">
-          <h1 className="col-12">I. THÔNG TIN VỀ PHẢN ỨNG CÓ HẠI (ADR)</h1>
+          <h1 className="col-12">I. DETAILS OF ADVERSE DRUG REACTION (ADR)</h1>
         </div>
         <ComponentOne data={this.state.data} />
 
         <div className="row">
-          <h1 className="col-12">II. THÔNG TIN VỀ THUỐC NGHI NGỜ GÂY ADR</h1>
+          <h1 className="col-12">II. DETAILS OF DRUGS SUSPECTED TO HAVE CAUSED THE ADR</h1>
         </div>
         <ComponentTwo data={this.state.data} />
 
         <div className="row">
-          <h1 className="col-12">III. PHẦN THẨM ĐỊNH ADR CỦA ĐƠN VỊ</h1>
+          <h1 className="col-12">III. THE ADR ASSESSMENT</h1>
         </div>
         <ComponentThree data={this.state.data} />
 
         <div className="row">
-          <h1 className="col-12">IV. THÔNG TIN VỀ NGƯỜI / ĐƠN VỊ GỬI BÁO CÁO</h1>
+          <h1 className="col-12">IV. PARTICULARS OF REPORTER</h1>
         </div>
         <ComponentFour data={this.state.data} />
 
         <div className="row">
-          <h1 className="col-12">V. THÔNG TIN VỀ NGƯỜI / ĐƠN VỊ ĐÁNH GIÁ</h1>
+          <h1 className="col-12">V. PARTICULARS OF REVIWER</h1>
         </div>
         <ComponentFive data={this.state.data} />
       </div>
@@ -103,7 +103,7 @@ class View extends Component {
               <div className="box">
                 <div className="row">
                   <div className="col">
-                    <p>Find</p>
+                    <p>Find report by ID</p>
                   </div>
                 </div>
                 <div className="row">

@@ -40,7 +40,6 @@ class Action extends Component {
 
   getAddress(hash) {
     this.props.getReport(Util.decodeIPFSHash(hash)).then(re => {
-      let to = re[3];
       this.setState({txAddress : re[3]})
     }).catch(er => {
       this.setState({txAddress : null});

@@ -47,8 +47,8 @@ class View extends Component {
     this.props.getIPFS(this.state.hash).then(re => {
       this.setState({ data: re, error: null });
     }).catch(er => {
-      this.setState({ data: null, error: 'Cannot load document' });
-    })
+      this.setState({ data: null, error: 'Cannot load report' });
+    });
   }
 
   error() {
@@ -103,15 +103,15 @@ class View extends Component {
               <div className="box">
                 <div className="row">
                   <div className="col">
-                    <p>Tìm báo cáo</p>
+                    <p>Find</p>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-9">
-                    <input type="text" placeholder="Mã báo cáo" onChange={this.onChange} value={this.state.hash} />
+                    <input type="text" placeholder="Report ID" onChange={this.onChange} value={this.state.hash} />
                   </div>
                   <div className="col-3">
-                    <button className="my-btn primary no-margin" onClick={this.find}>Đọc</button>
+                    <button className="my-btn primary no-margin" onClick={this.find}>Find</button>
                   </div>
                 </div>
                 {this.error()}

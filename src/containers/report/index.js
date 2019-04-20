@@ -56,14 +56,14 @@ class Report extends Component {
         console.error(er);
         this.setState({
           successMsg: null,
-          errorMsg: 'Cannot submit document.'
+          errorMsg: 'Cannot submit report.'
         });
       });
     }).catch(er => {
       console.error(er);
       this.setState({
         successMsg: null,
-        errorMsg: 'Cannot submit document.'
+        errorMsg: 'Cannot submit report.'
       });
     });
   }

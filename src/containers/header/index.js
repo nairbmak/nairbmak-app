@@ -20,10 +20,10 @@ class Header extends Component {
             <div className="col">
               <div className="row justify-content-end">
                 <NavLink className="router col-2" activeClassName="active" to="/report">
-                  <span>Báo cáo</span>
+                  <span>ADR/ADE Report</span>
                 </NavLink>
                 <NavLink className="router col-2" activeClassName="active" to="/view">
-                  <span>Tìm báo cáo</span>
+                  <span>Find Report</span>
                 </NavLink>
                 <NavLink className="router col-2" activeClassName="active" to="/explorer">
                   <span>Explorer</span>

@@ -114,7 +114,7 @@ class Explorer extends Component {
                 <div className="col-1"><h1>Block</h1></div>
                 <div className="col-2"><h1>Timestamp</h1></div>
                 <div className="col-3"><h1>Submitter</h1></div>
-                <div className="col-3"><h1>Document Hash</h1></div>
+                <div className="col-3"><h1>Report ID</h1></div>
                 <div className="col-2"><h1>Weight</h1></div>
                 <div className="col-1"><h1>Closed</h1></div>
               </div>

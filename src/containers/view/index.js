@@ -47,7 +47,7 @@ class View extends Component {
     this.props.getIPFS(this.state.hash).then(re => {
       this.setState({ data: re, error: null });
     }).catch(er => {
-      this.setState({ data: null, error: 'Cannot load report' });
+      if (er) this.setState({ data: null, error: 'Cannot load report' });
     });
   }
 

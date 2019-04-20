@@ -53,12 +53,9 @@ class Explorer extends Component {
     eachSeries(indices, (index, callback) => {
       this.props.getExplorer(index).then(hash => {
         if (hash && hash !== '0x') {
-          this.props.getReport(hash).then(report => {
+          return this.props.getReport(hash).then(report => {
             report.push(hash);
             data.push(report);
-            return callback();
-          }).catch(er => {
-            console.error(er);
             return callback();
           });
         } else return callback();

@@ -28,10 +28,8 @@ class DonateAction extends Component {
       let to = re[3];
       let amount = this.state.amount.toString() + '000000000000000000'; // 100 WORK as default
 
-      this.props.transferWORK(to, amount).then(txId => {
+      return this.props.transferWORK(to, amount).then(txId => {
         this.returnData(null, txId);
-      }).catch(er => {
-        if (er) this.returnData('Cannot score this report', null);
       });
     }).catch(er => {
       if (er) this.returnData('Cannot score this report', null);

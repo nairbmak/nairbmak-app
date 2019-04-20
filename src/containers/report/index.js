@@ -46,17 +46,11 @@ class Report extends Component {
 
   submit() {
     this.props.setIPFS(this.data).then(re => {
-      this.props.submitReport(Util.decodeIPFSHash(re.hash), this.reviewers).then(txId => {
+      return this.props.submitReport(Util.decodeIPFSHash(re.hash), this.reviewers).then(txId => {
         this.setState({
           successMsg: re.hash,
           txId: txId,
           errorMsg: null
-        });
-      }).catch(er => {
-        console.error(er);
-        this.setState({
-          successMsg: null,
-          errorMsg: 'Cannot submit report.'
         });
       });
     }).catch(er => {

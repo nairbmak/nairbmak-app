@@ -113,7 +113,7 @@ class Report extends Component {
             <ComponentFour onData={this.onData} />
 
             <div className="row">
-              <h1 className="col-12">V. PARTICULARS OF REVIWER</h1>
+              <h1 className="col-12">V. PARTICULARS OF REVIEWERS</h1>
             </div>
             <ComponentFive onData={this.onReviewers} />
 

@@ -86,7 +86,7 @@ class View extends Component {
         <ComponentFour data={this.state.data} />
 
         <div className="row">
-          <h1 className="col-12">V. PARTICULARS OF REVIWER</h1>
+          <h1 className="col-12">V. PARTICULARS OF REVIEWERS</h1>
         </div>
         <ComponentFive data={this.state.data} />
       </div>

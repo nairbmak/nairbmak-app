@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CheckboxText from '../core/checkboxText';
 import BoxText from '../core/boxText';
 
-const NAME = 'ThongTinVeNguoiDonViGuiBaoCao';
+const NAME = 'ParticularsOfReporter';
 
 
 class ComponentFour extends Component {

@@ -2,7 +2,7 @@
   "name": "nairbmak-app",
   "version": "0.0.1",
   "scripts": {
-    "start": "REACT_APP_ENV=development PORT=5000 react-scripts --max_old_space_size=4096 start",
+    "start": "REACT_APP_ENV=development HTTPS=true PORT=5000 react-scripts --max_old_space_size=4096 start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "css": "nodemon --exec 'sass ./src/statics/styles/index.scss ./src/statics/styles/index.css --style compressed'"

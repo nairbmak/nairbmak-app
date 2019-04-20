@@ -19,7 +19,7 @@ class ComponentThree extends Component {
           options={['Certain', 'Uncertain', 'Probable/likely', 'Conditional/unclassified', 'Possible', 'Unassessable/unclassifiable', 'Not assess']}
           more="Other"
           data={data}
-          size="6" />
+          size="8" />
 
         <CheckboxText
           viewOnly={true}
@@ -28,7 +28,7 @@ class ComponentThree extends Component {
           options={['WHO', 'Naranjo', 'Not assess']}
           more="Other"
           data={data}
-          size="6" />
+          size="4" />
 
         <BoxText
           viewOnly={true}

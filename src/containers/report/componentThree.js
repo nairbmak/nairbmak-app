@@ -45,7 +45,7 @@ class ComponentThree extends Component {
           options={['Certain', 'Probable/likely', 'Possible', 'Unlikely', 'Conditional/unclassified', 'Unassessable/unclassifiable', 'Not assess']}
           more="Other"
           onChange={this.onChange}
-          size="6" />
+          size="8" />
 
         <CheckboxText
           title={<p>12. Probability scale</p>}
@@ -53,7 +53,7 @@ class ComponentThree extends Component {
           options={['WHO', 'Naranjo', 'Not assess']}
           more="Other"
           onChange={this.onChange}
-          size="6" />
+          size="4" />
 
         <BoxText
           title={<p>13. Comments <span className="italic">(Optional)</span></p>}

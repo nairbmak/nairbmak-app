@@ -83,7 +83,7 @@ class Report extends Component {
 
   onReviewers(re) {
     this.data = { ...this.data, ...re };
-    this.reviewers = re.ThongTinVeNguoiDonViDanhGia.DanhSachChuyenGiaDanhGia;
+    this.reviewers = re.ParticularsOfReviewers.ListOfReviewerAddresses;
   }
 
   render() {

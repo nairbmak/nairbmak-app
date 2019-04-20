@@ -42,7 +42,7 @@ class ComponentThree extends Component {
         <CheckboxText
           title={<p>11. Assessment of causality</p>}
           name="AssessmentOfCausality"
-          options={['Certain', 'Uncertain', 'Probable/likely', 'Conditional/unclassified', 'Possible', 'Unassessable/unclassifiable', 'Not assess']}
+          options={['Certain', 'Probable/likely', 'Possible', 'Unlikely', 'Conditional/unclassified', 'Unassessable/unclassifiable', 'Not assess']}
           more="Other"
           onChange={this.onChange}
           size="6" />

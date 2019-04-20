@@ -14,6 +14,7 @@ class Action extends Component {
       visible: false,
       error: null,
       txId: null,
+      txAddress : null,
       data: {
         completeness: 0,
         importance: 0
@@ -30,6 +31,21 @@ class Action extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    if(this.props.work !== nextProps.work) {
+      this.getAddress(nextProps.hash);
+    }
+  }
+
+  getAddress(hash) {
+    this.props.getReport(Util.decodeIPFSHash(hash)).then(re => {
+      let to = re[3];
+      this.setState({txAddress : re[3]})
+    }).catch(er => {
+      this.setState({txAddress : null});
+    });
+  }
   message() {
     if (this.state.error) return <div className="row">
       <div className="col-12">
@@ -173,7 +189,7 @@ class Action extends Component {
               <div className="box">
                 <div className="row">
                   <div className="col">
-                    <p className="lengthy">Ủng hộ cho báo cáo {Util.decodeIPFSHash(hash)}</p>
+                    <p className="lengthy">Ủng hộ cho báo cáo {Util.decodeIPFSHash(hash)} {this.state.txAddress ? `với địa chỉ `+ this.state.txAddress : null } </p>
                   </div>
                 </div>
                 <div className="row">
@@ -194,7 +210,7 @@ class Action extends Component {
             hint="Nhập số lượng ủng hộ"
             onChange={this.onChange}
             size="6" />,
-            <p className="error-msg-plain italic" style={{marginLeft:"70%"}}>{this.state.error}</p>
+            <p key={3} className="error-msg-plain italic" style={{marginLeft:"70%"}}>{this.state.error}</p>
           ]
         }
 

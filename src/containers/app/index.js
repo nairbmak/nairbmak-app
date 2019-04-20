@@ -7,6 +7,8 @@ import Report from '../report';
 import View from '../view';
 import Explorer from '../explorer';
 
+console.log('hello');
+
 class App extends Component {
   render() {
     return (

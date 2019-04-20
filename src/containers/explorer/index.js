@@ -56,11 +56,12 @@ class Explorer extends Component {
           this.props.getReport(hash).then(report => {
             report.push(hash);
             data.push(report);
+            return callback();
           }).catch(er => {
             console.error(er);
+            return callback();
           });
-        }
-        return callback();
+        } else return callback();
       }).catch(er => {
         return callback(er);
       });

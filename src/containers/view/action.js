@@ -6,7 +6,6 @@ import Util from 'helpers/util.lib';
 import { scoreReport, closeReport, getReport } from 'modules/database.reducer';
 import { transferWORK } from 'modules/work.reducer';
 
-
 class Action extends Component {
   constructor() {
     super();
@@ -18,7 +17,9 @@ class Action extends Component {
       data: {
         completeness: 0,
         importance: 0
-      }
+      },
+      visibleInputSupportNumber : false,
+      SoLuongUngHo: null
     }
 
     this.message = this.message.bind(this);
@@ -92,10 +93,11 @@ class Action extends Component {
     });
   }
 
-  _supportReport(hash) {
+  _supportReport(hash, numberSupport = "100") {
     this.props.getReport(Util.decodeIPFSHash(hash)).then(re => {
       let to = re[3];
-      let amount = "100000000000000000000"; // 100 WORK as default
+      let amount = numberSupport + "000000000000000000"; // 100 WORK as default
+
       this.props.transferWORK(to, amount).then(txId => {
         this.setState({
           txId: txId,
@@ -116,12 +118,23 @@ class Action extends Component {
   }
 
   onChange(value) {
-    this.setState({
-      data: {
-        ...this.state.data,
-        ...value
-      }
-    });
+    this.setState({SoLuongUngHo : value.SoLuongUngHo});
+  }
+
+  visibleInputSupportNumber = () => {
+    this.setState({visibleInputSupportNumber : !this.state.visibleInputSupportNumber})
+    this.setState({error : null});
+  }
+
+  sendSupportNumber = (hash) => {
+    if(!this.state.SoLuongUngHo || isNaN(this.state.SoLuongUngHo)){
+      this.setState({error : "Vui lòng nhập số."});
+      return;
+    }
+    let numberSupport = this.state.SoLuongUngHo.toString();
+    this._supportReport(hash, numberSupport);
+    this.setState({SoLuongUngHo : null});
+    this.visibleInputSupportNumber();
   }
 
   render() {
@@ -131,7 +144,7 @@ class Action extends Component {
     return (
       <div className="row">
 
-        {this.state.visible ? null : <div className="col-12">
+        {this.state.visible || this.state.visibleInputSupportNumber ? null : <div className="col-12">
           <div className="box">
             <div className="row">
               <div className="col">
@@ -140,8 +153,9 @@ class Action extends Component {
             </div>
             <div className="row">
               <div className="col-4">
-                <button className="my-btn secondary no-margin" onClick={() => { this._supportReport(hash) }}>Ủng hộ</button>
+                <button className="my-btn secondary no-margin" onClick={this.visibleInputSupportNumber}>Ủng hộ</button>
               </div>
+
               <div className="col-4">
                 <button className="my-btn primary no-margin" onClick={this.openScore}>Chấm điểm</button>
               </div>
@@ -152,6 +166,37 @@ class Action extends Component {
             {this.message()}
           </div>
         </div>}
+
+        {!this.state.visibleInputSupportNumber ? null :
+          [
+            <div className="col-6" key={0}>
+              <div className="box">
+                <div className="row">
+                  <div className="col">
+                    <p className="lengthy">Ủng hộ cho báo cáo {Util.decodeIPFSHash(hash)}</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-6">
+                    <button className="my-btn secondary no-margin" onClick={() => { this.sendSupportNumber(hash) }}>Ủng hộ</button>
+                  </div>
+                  <div className="col-6">
+                    <button className="my-btn cancel no-margin" onClick={this.visibleInputSupportNumber}>Huỷ</button>
+                  </div>
+                </div>
+              </div>
+            </div>,
+            <BoxText
+            key={1}
+            pop="box secondary"
+            title={<p>Số lượng ủng hộ:</p>}
+            name="SoLuongUngHo"
+            hint="Nhập số lượng ủng hộ"
+            onChange={this.onChange}
+            size="6" />,
+            <p className="error-msg-plain italic" style={{marginLeft:"70%"}}>{this.state.error}</p>
+          ]
+        }
 
         {!this.state.visible ? null : <div className="col-6">
           <div className="box">

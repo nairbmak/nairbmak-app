@@ -24,6 +24,18 @@ class API {
       }
     });
   }
+
+  static buyData(txId, data) {
+    return axios({
+      method: 'post',
+      baseURL: config.server.API.URL,
+      url: config.server.API.BUY,
+      data: {
+        txId: txId,
+        data: data
+      }
+    });
+  }
 }
 
 export default API;

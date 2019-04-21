@@ -11,7 +11,8 @@ config.development = {
     URL: 'http://localhost:3000',
     // URL: 'http://172.25.8.103:3000',
     SET: '/report/set',
-    GET: '/report/get'
+    GET: '/report/get',
+    BUY: '/data/buy'
   }
 }
 
@@ -22,7 +23,8 @@ config.production = {
   API: {
     URL: 'http://localhost:3000',
     SET: '/report/set',
-    GET: '/report/get'
+    GET: '/report/get',
+    BUY: '/data/buy'
   }
 }
 

@@ -17,7 +17,11 @@ config.development = {
   DISTRIBUTION: {
     ADDRESS: '0x28c413614de7ec76b793285ba80052b444619b1a'
   },
-};
+  RETAIL: {
+    ADDRESS: '0x76d8b624efddd1e9fc4297f82a2689315ac62d82',
+    VALUE: '1000000000000000000'
+  }
+}
 
 /**
  * Production configurations
@@ -33,7 +37,11 @@ config.production = {
   DISTRIBUTION: {
     ADDRESS: '0xda2cdf61ac02117250f786037a47692bbf8d3516'
   },
-};
+  RETAIL: {
+    ADDRESS: '0x76d8b624efddd1e9fc4297f82a2689315ac62d82',
+    VALUE: '1000000000000000000'
+  }
+}
 
 /**
  * Module exports

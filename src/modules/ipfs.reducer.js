@@ -68,6 +68,37 @@ export const setIPFS = (data) => {
 }
 
 /**
+ * Buy Data
+ */
+export const BUY_DATA = 'BUY_DATA';
+export const BUY_DATA_OK = 'BUY_DATA_OK';
+export const BUY_DATA_FAIL = 'BUY_DATA_FAIL';
+
+function _buyData(txId, data, callback) {
+  api.buyData(txId, data).then(re => {
+    return callback(null, re.data.data);
+  }).catch(er => {
+    return callback(er, null);
+  });
+}
+
+export const buyData = (txId, data) => {
+  return dispatch => {
+    return new Promise((resolve, reject) => {
+      dispatch({ type: BUY_DATA });
+      _buyData(txId, data, (er, re) => {
+        if (er) {
+          dispatch({ type: BUY_DATA_FAIL, reason: er, data: null });
+          return reject(er);
+        }
+        dispatch({ type: BUY_DATA_OK, reason: null, data: re });
+        return resolve(re);
+      });
+    });
+  }
+}
+
+/**
  * Reducder
  */
 export default (state = defaultState, action) => {
@@ -79,6 +110,10 @@ export default (state = defaultState, action) => {
     case SET_IPFS_OK:
       return { ...state, ...action.data };
     case SET_IPFS_FAIL:
+      return { ...state, ...action.data };
+    case BUY_DATA_OK:
+      return { ...state, ...action.data };
+    case BUY_DATA_FAIL:
       return { ...state, ...action.data };
     default:
       return state;
